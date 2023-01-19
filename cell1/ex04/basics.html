@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Básico</title>
+    <style>
+        body{
+            background-color: pink;
+            font-family:'Courier New', Courier, monospace;
+            text-align: center;
+        }
+        .title{
+            color:white;
+            text-align: center;
+        }
+        .shops{
+            display: flex;
+            justify-content: center;
+            gap: 20%;
+        }
+        .shop{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .image{
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            object-position: top;
+        }
+        .link{
+            font-weight: bold;
+            color: darkmagenta;
+        }
+        .copyright{
+            text-align: right;
+            font-style: italic;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">Para &szlig;ásica tú, nena</h1>
+    </header>
+    <main>
+        <section class="shops">
+            <article class="shop">
+                <img class="image" src="./img/mujeresycia.jpeg" alt="Fachada librería Mujeres y Compañía">
+                <a class="link" href="https://www.mujeresycialibreria.net/" target="_blank">Librería Mujeres y Compañía</a>
+            </article>
+            <article class="shop">
+                <img class="image" src="./img/berkana.jpeg" alt="Fachada librería Berkana">
+                <a class="link" href="https://www.libreriaberkana.com/" target="_blank">Librería Berkana</a>
+            </article>
+        </section>
+    </main>
+    <hr />
+    <footer>
+        <p class="copyright">&copy; bubis-ma 2022</p>
+    </footer>
+</body>
+</html>

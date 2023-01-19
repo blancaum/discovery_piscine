@@ -1,0 +1,41 @@
+body {
+    margin:0;
+    padding: 0;
+}
+
+.parallax-bg1 {
+    height: 100vh;
+    background-image: url(./img/bg1.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.text {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.6rem;
+}
+
+.parallax-bg2 {
+    height: 100vh;
+    background-color: black;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax-bg3 {
+    height: 100vh;
+    background-image: url(./img/bg2.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
