@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cell3 - ex01</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        .balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+    <body>
+        <div class="js_balloon balloon"></div>
+        <script>
+            //Elementos HTML
+            const balloon = document.querySelector('.js_balloon');
+
+            //Constantes
+            const initialPixels = 200;
+            const incrementPixels = 10;
+            const decrementPixels = 5;
+            const maxPixels = 420;
+            const colors = ['red','green','blue'];
+
+            //Variables globales
+            let balloonPixels = initialPixels;
+            let currentColor = 0;
+
+            //Funciones Handler
+            function handleClickBalloon(ev) {
+
+                if (balloonPixels <= maxPixels) {
+                    balloonPixels = balloonPixels + incrementPixels;
+                    currentColor = (currentColor + 1) % colors.length;
+                } else {
+                    balloonPixels = initialPixels;
+                    currentColor = 0;
+                }
+                balloon.style.width = `${balloonPixels}px`;
+                balloon.style.height = `${balloonPixels}px`;
+                balloon.style.backgroundColor = colors[currentColor];
+
+            }
+
+            function handleMouseOut(ev) {
+                if (balloonPixels > initialPixels) {
+                    balloonPixels = balloonPixels - decrementPixels;
+                    balloon.style.width = `${balloonPixels}px`;
+                    balloon.style.height = `${balloonPixels}px`;
+                }
+            }
+
+            balloon.addEventListener('click',handleClickBalloon);
+            balloon.addEventListener('mouseout',handleMouseOut);
+
+        </script>
+    </body>
+</html>
