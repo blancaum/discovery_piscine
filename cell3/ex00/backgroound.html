@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./backgroound.css">
+    <title>Document</title>
+</head>
+<body>
+    <form class="js_form form" action="#">
+        <button class="js_btn button">
+            ¡Haz click para cambiar de color!
+        </button>
+    </form>
+    <p class="js_text text"></p>
+    <script>
+        //Elementos HTML
+        const form = document.querySelector('.js_form');
+        const btn = document.querySelector('.js_btn');
+        const text = document.querySelector('.js_text');
+
+        //Funciones auxiliares
+
+        function getRandomNumber(max) {
+            //obtener un número aleatorio entre 0 y un máximo
+            return Math.floor(Math.random() * max);
+        }
+
+
+        function getRandomColor() {
+            //obtener un color aleatorio
+            const red = getRandomNumber(255);
+            const green = getRandomNumber(255);
+            const blue = getRandomNumber(255);
+
+            const newColor = `rgb(${red},${green},${blue})`;
+
+            return newColor;
+        }
+
+        //Funciones Handler
+        function handleClickForm(ev) {
+            ev.preventDefault();
+        }
+
+        function handleClickBtn(ev) {
+            newColor = getRandomColor();
+            document.body.style.backgroundColor = newColor;
+            text.innerHTML = `Color obtenido: ${newColor}`
+        }
+
+        form.addEventListener('click',handleClickForm);
+        btn.addEventListener('click',handleClickBtn);
+
+    </script>
+</body>
+</html>
